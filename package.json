@@ -1,0 +1,31 @@
+{
+  "name": "micro-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stierma1/micro-lambda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stierma1/micro-lambda/issues"
+  },
+  "homepage": "https://github.com/stierma1/micro-lambda#readme",
+  "dependencies": {
+    "back-chain-couch-query": "^1.0.4",
+    "back-query-extension-minio": "^1.0.2",
+    "body-parser": "^1.18.3",
+    "busboy": "^0.2.14",
+    "cron": "^1.4.1",
+    "express": "^4.16.3",
+    "glob": "^7.1.3",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "super-unify": "^1.0.1"
+  }
+}
