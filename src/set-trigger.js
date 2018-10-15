@@ -1,4 +1,4 @@
-var CronJob = require("cron");
+var CronJob = require("cron").CronJob;
 var Process = require("./process");
 var fs = require("fs");
 var SHARED_STATE = require("./shared-state");
