@@ -18,7 +18,7 @@ module.exports = (lambdaName, cronString, num) => {
       } catch(e){
         fs.appendFileSync(path.join(__dirname, "../error-log.txt"), e.stack.toString());
       }
-    });
+    }, null, true, 'America/Los_Angeles', {}, true);
     SHARED_STATE.jobs.push(job);
   } catch(e){
     fs.appendFileSync(path.join(__dirname, "../error-log.txt"), e.stack.toString());
