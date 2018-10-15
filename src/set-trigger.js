@@ -8,11 +8,11 @@ module.exports = (lambdaName, cronString, num) => {
   try{
     let {name, runFile, maxMemory, timeout} = JSON.parse(fs.readFileSync(path.join(__dirname, "../datastore", lambdaName + ".json"), "utf8"))
     var job = new CronJob(cronString, () => {
-      fs.appendFileSync(path.join(__dirname, "../log.txt"), `Starting ${name}: ${cronString}`);
+      fs.appendFileSync(path.join(__dirname, "../log.txt"), `Starting ${name}: ${cronString}\n`);
       try{
         for(var i = 0; i < parseInt(num); i++){
           var proc = new Process(name, runFile, timeout, maxMemory);
-          SHARED_STATE.push(proc);
+          SHARED_STATE.processes.push(proc);
           proc.run({time:Date.now()});
         }
       } catch(e){
