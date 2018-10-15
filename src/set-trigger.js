@@ -8,7 +8,7 @@ module.exports = (lambdaName, cronString, num) => {
     let {name, runFile, maxMemory, timeout} = JSON.parse(fs.readFileSync(path.join(__dirname, "../datastore", lambdaName + ".json"), "utf8"))
     var job = new CronJob(cronString, () => {
       try{
-        for(var i = 0; i < num; i++){
+        for(var i = 0; i < parseInt(num); i++){
           var proc = new Process(name, runFile, timeout, maxMemory);
           SHARED_STATE.push(proc);
           proc.run({time:Date.now()});
