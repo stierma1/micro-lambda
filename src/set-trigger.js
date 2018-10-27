@@ -13,7 +13,7 @@ module.exports = (lambdaName, cronString, num) => {
         for(var i = 0; i < parseInt(num); i++){
           var proc = new Process(name, runFile, timeout, maxMemory);
           SHARED_STATE.processes.push(proc);
-          proc.run({time:Date.now()});
+          proc.run({time:Date.now(),runSequence:i});
         }
       } catch(e){
         fs.appendFileSync(path.join(__dirname, "../error-log.txt"), e.stack.toString());
